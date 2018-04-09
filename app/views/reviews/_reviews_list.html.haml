@@ -1,0 +1,20 @@
+- if shows.blank?
+  %table{ :style => "table-layout: auto; title: 'No Values results...';" }
+    %tr{ :style => "font-family: $helvetica; font-size: 2em; margin-bottom: .5em" }
+      %th No values yet...
+  %br
+- else
+  %table.table.table-striped
+    %thead
+      %tr{ :style => "font-family: $helvetica; font-size: 2em; margin-bottom: .5em" }
+        %th Title
+        %th Average score
+        %th Reviews
+    %tbody
+      - shows.each_with_index do |show, i|
+        %tr{ :data => { :id => i } }
+          %td{ :data => { :column => "title" }, :style => "text-align: left; width: 25em" }= show['title']
+          %td{ :data => { :column => "score" }, :style => "color: rgba(122, 13, 75, 1);" }= show['ave_score']
+          %td{ :data => { :column => "count" }, :style => "color: rgba(122, 13, 75, 1);" }= show['review_count']
+%hr
+= paginate shows

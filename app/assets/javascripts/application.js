@@ -8,9 +8,10 @@
 // compiled file.
 //
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
-// about supported directives.
+// about supported directives. //= require shows_list.coffee
 //
 //= require jquery
 //= require jquery_ujs
+//= require turbolinks
 //= require bootstrap
 //= require_tree .

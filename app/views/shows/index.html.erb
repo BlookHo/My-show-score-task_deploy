@@ -1,0 +1,10 @@
+<h1>Shows expert values listing</h1>
+<br/>
+<%= render partial: 'reviews/reviews_list', :locals => {shows: @shows} %>
+<hr/>
+<script>
+    <%= render(:partial => 'updated_reviews_list', :formats => [:js] ) %>
+</script>
+<div class="button-container">
+  <button class="btn btn-lg button">Test</button>
+</div>

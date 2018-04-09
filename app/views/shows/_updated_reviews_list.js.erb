@@ -1,0 +1,15 @@
+function sleep(seconds){
+    var waitUntil = new Date().getTime() + seconds*1000;
+    while(new Date().getTime() < waitUntil) true;
+}
+
+function repeat() {
+    setTimeout(function (){
+        reviews_list()
+        return repeat()
+    }, 1000);
+};
+
+repeat()
+
+// reviews_list()

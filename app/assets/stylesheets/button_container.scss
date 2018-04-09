@@ -1,0 +1,46 @@
+$button-container-background: #eee;
+$button-text-color: #fff;
+$button-background-top: #07575b;
+$button-background-bottom: #66a5ad;
+$button-border-top-color: #ffbb00;
+$button-border-bottom-color: #a43820;
+
+.button-container {
+  display: inline-block;
+  margin: 20px;
+  padding: 20px;
+}
+
+.button {
+  position: relative;
+  background: transparent;
+  border:2px solid transparent;
+  border-radius: 12px;
+  width: 70px;
+  color: $button-text-color;
+  background-image: -webkit-gradient(linear, left top, left bottom, from($button-background-top), to($button-background-bottom));
+  background-image: -webkit-linear-gradient(top, $button-background-top, $button-background-bottom);
+  background-image: -moz-linear-gradient(top, $button-background-top, $button-background-bottom);
+  background-image: -ms-linear-gradient(top, $button-background-top, $button-background-bottom);
+  background-image: -o-linear-gradient(top, $button-background-top, $button-background-bottom);
+  background-image: linear-gradient($button-background-top, $button-background-bottom);
+  background-clip: padding-box;
+  padding: 10px;
+  pointer-events:none;
+}
+
+.button::after {
+  position: absolute;
+  top: -2px; bottom: -2px;
+  width: 70px;
+  left: -2px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from($button-border-top-color), to($button-border-bottom-color));
+  background-image: -webkit-linear-gradient(top, $button-border-top-color, $button-border-bottom-color);
+  background-image: -moz-linear-gradient(top, $button-border-top-color, $button-border-bottom-color);
+  background-image: -ms-linear-gradient(top, $button-border-top-color, $button-border-bottom-color);
+  background-image: -o-linear-gradient(top, $button-border-top-color, $button-border-bottom-color);
+  background-image: linear-gradient($button-border-top-color, $button-border-bottom-color);
+  content: '';
+  z-index: -1;
+  border-radius: 11px;
+}

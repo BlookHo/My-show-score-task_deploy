@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'show/index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -53,4 +55,17 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+  root 'shows#index'
+
+  resources :shows, only: [:index] do
+    resources :reviews # no need for this in this task
+  end
+
+  # Api definition
+  namespace :api, defaults: { format: :json } do
+    namespace :v1 do
+      match 'reviews_list', to: 'reviews#reviews_list', via: 'get'
+    end
+  end
 end
